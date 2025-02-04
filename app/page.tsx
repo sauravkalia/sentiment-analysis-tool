@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 
 type SentimentData = {
@@ -22,7 +24,7 @@ export default function Home() {
         <div className="mt-4">
           <h2 className="text-lg font-semibold">Report for {sentimentData.date}</h2>
           <ul className="mt-2">
-            {sentimentData.sentiments.map((item, index) => (
+            {sentimentData.sentiments?.map((item, index) => (
               <li key={index} className="p-2 border rounded mt-2">
                 <a href={item.link} target="_blank" rel="noopener noreferrer">
                   <strong>{item.title}</strong> - <span>{item.sentiment}</span>
